@@ -1,0 +1,27 @@
+{% extends "index.html" %}
+
+{% block prediction %}
+<div class="row">
+	<div class="col">
+		<img src="static/images/{{ prediction_image }}" width="150px">
+		<label>{{ prediction_text }}</label>
+	</div>
+	<div class="col">
+		<form action="/review">
+			<div class="form-group">
+				<label>Was my prediction right?</label>
+				<div class="row">
+					<div class="col">
+						<input type="radio" name="check" selected>
+					</div>
+					<div class="col">
+						<input type="radio" name="check">
+					</div>
+					<button type="submit" class="btn btn-danger btn-lg" name="submit">Send</button>
+				</div>
+			</div>
+		</form>
+	</div>
+</div>
+
+{% endblock %}

@@ -1,13 +1,13 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-from process_words import review_to_wordlist, get_data_ready
+from SentimentAnalysis.ProcessWords import review_to_wordlist, get_data_ready
 from sklearn.externals import joblib
 from json import load
 
-model = joblib.load("models/model-0.69-0.003-50.joblib")
+model = joblib.load("SentimentAnalysis/models/model-0.69-0.003-50.joblib")
 
-with open("dictionary/word2index.json","r") as json_file:
+with open("SentimentAnalysis/dictionary/word2index.json","r") as json_file:
 	word2index = load(json_file)
 
 def predict_sentiment(text):
