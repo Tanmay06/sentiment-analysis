@@ -5,7 +5,6 @@ from nltk.stem import SnowballStemmer
 import numpy as np
 import re
 
-nltk.download("punkt")
 def review_to_wordlist(review, remove_stopwords=False):
     # Clean the text, with the option to remove stopwords.
     
