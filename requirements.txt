@@ -1,0 +1,7 @@
+Flask
+nltk
+gunicorn
+Jinja2
+Werkzeug
+distribute
+wsgirefnltk
