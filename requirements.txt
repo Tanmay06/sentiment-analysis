@@ -3,4 +3,5 @@ nltk
 gunicorn
 Jinja2
 Werkzeug
-wsgirefnltk
+distribute
+wsgiref
