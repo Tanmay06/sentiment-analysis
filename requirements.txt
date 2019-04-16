@@ -6,3 +6,4 @@ Werkzeug
 numpy
 pandas
 scikit-learn
+requests
