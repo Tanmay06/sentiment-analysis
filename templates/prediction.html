@@ -1,18 +1,18 @@
 {% extends "index.html" %}
 
 {% block sub %}
-<div class="row justify-content-center">
+<div class="row justify-content-center" style="padding-top: 10px;">
 	<div class="col-md">
 		<div class="row align-items-center">
-			<div class="col-sm">
+			<div class="col-6 col-sm">
 				<img src="static/images/{{ prediction_image }}" width="150px" class="image-fluid">
 			</div>
-			<div class="col-sm">
+			<div class="col-6 col-sm align-self-center">
 				<label class="label lead">{{ prediction_text }}</label>
 			</div>
 		</div>
 	</div>
-	<div class="col-md">
+	<div class="col-md" style="padding-top: 10px;">
 		<form action="/review">
 			<div class="form-group row">
 				<label class="row-form-label lead">Was my prediction right?</label>
@@ -23,11 +23,11 @@
 			<div class="form-group row">
 				<div class="col-sm">
 					<input type="radio" name="check" value = "1" checked>
-					<label class="col-form-label lead">Of-course you rock !!</label>
+					<label class="col-form-label lead">👍 Of-course you rock !!</label>
 				</div>
 				<div class="col-sm">
 					<input type="radio" name="check" value="0">
-					<label class="col-form-label lead">Mehhh ... Sorta ...</label>
+					<label class="col-form-label lead">👎 Mehhh ... Sorta ...</label>
 				</div>
 			</div>
 			<button type="submit" class="btn btn-danger btn-lg" name="submit">Send</button>

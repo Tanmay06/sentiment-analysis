@@ -1,8 +1,8 @@
-<div class="row align-items-center justify-content-center">
+<div class="row align-items-center justify-content-center" style="padding: 10px;">
 	<div class="col-md">
 		<form action="/predict">
 			<div class="form-group row">
-				<p class="mb-0 lead"><em>"Hi!! This is Senti-Bo, I was created to understand human sentiments. I'm still young so I need your help. All you need to do is tell me whether my predictions are right. Thank you ..."</em></p>
+				<p class="mb-0 lead"><em>"Hi!! This is Senti-Bo</em>🤖<em>, I was created to understand human sentiments. I'm still young so I need your help. All you need to do is tell me whether my predictions are right. And yeah, my creator told me that sentiment can be positive even though the statement is morally wrong, so judge me accordingly. Thank you, I hope your contribution will make a better Robo-Being.</em>☺️<em>"</em></p>
 			</div>
 			<div class="form-group row">
 				<input type="text" class="form-control form-control-lg" name="sentence" placeholder="Enter your sentence here ...">
@@ -12,7 +12,7 @@
 			</div>
 		</form>
 	</div>
-	<div class="col-md align-self-center">
+	<div class="col-md">
 		<div class="row justify-content-center">
 			<img src="{{ url_for('static',filename = 'images/botcito.png')}}" class="image">
 		</div>
