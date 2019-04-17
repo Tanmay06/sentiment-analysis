@@ -1,4 +1,4 @@
-<div class="row align-items-center justify-content-around">
+<div class="row align-items-center justify-content-center">
 	<div class="col-md">
 		<form action="/predict">
 			<div class="form-group row">
@@ -13,6 +13,8 @@
 		</form>
 	</div>
 	<div class="col-md align-self-center">
-		<img src="{{ url_for('static',filename = 'images/botcito.png')}}" class="image-fluid">
+		<div class="row justify-content-center">
+			<img src="{{ url_for('static',filename = 'images/botcito.png')}}" class="image">
+		</div>
 	</div>
 </div>
