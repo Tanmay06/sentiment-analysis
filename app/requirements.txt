@@ -1,0 +1,9 @@
+Flask
+nltk
+gunicorn
+Jinja2
+Werkzeug
+numpy
+pandas
+scikit-learn
+requests
