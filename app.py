@@ -19,7 +19,7 @@ def predict():
 
 	prediction_pict = {0:"negative.png",1:"positive.png"}
 	
-	prediction_text = {0:"Your reponse seems negative.",1:"Your response seems positive."}
+	prediction_text = {0:"Your response seems negative.",1:"Your response seems positive."}
 
 	sentence = request.args.get("sentence")
 	prediction = predict_sentiment(sentence)
