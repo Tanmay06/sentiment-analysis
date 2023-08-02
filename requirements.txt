@@ -3,7 +3,7 @@ nltk
 gunicorn
 Jinja2
 Werkzeug
-numpy
+numpy>=1.8.2
 pandas
-scikit-learn
+scikit-learn==0.20.3
 requests
