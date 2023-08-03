@@ -5,21 +5,21 @@ from nltk.stem import SnowballStemmer
 import numpy as np
 import re
 
-def review_to_wordlist(review, remove_stopwords=False):
+def review_to_wordlist(review, stopwords=None):
     # Clean the text, with the option to remove stopwords.
     
     # Convert words to lower case and split them
     words = review.lower().split()
 
     # Optionally remove stop words (true by default)
-    if remove_stopwords:
+    if stopwords:
         stops = set(stopwords.words("english"))
         words = [w for w in words if not w in stops]
     
     review_text = " ".join(words)
 
     # Clean the text
-    review_text = re.sub(r"@[A-Za-z0-9_]*", "", review_text)
+    review_text = re.sub(r"@[A-Za-z0-9_]*", "<user>", review_text)
     review_text = re.sub(r"[^A-Za-z0-9(),!.?\'\`]", " ", review_text)
     review_text = re.sub(r"\'s", "'s", review_text)
     review_text = re.sub(r"\'ve", "'ve", review_text)

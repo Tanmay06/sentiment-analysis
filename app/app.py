@@ -1,17 +1,19 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-from flask import Flask, render_template, request
-from SentimentAnalysis.PredictSentiment import predict_sentiment
-import requests as rq
+import os
 from json import dumps
 from datetime import datetime
+
+from flask import Flask, render_template, request
+from SentimentAnalysis.predictsentiment import PredictSentiment
+import requests as rq
 
 app = Flask(__name__)
 
 @app.route("/")
 def index():
-
+	
 	return render_template("index.html")
 
 @app.route("/predict")

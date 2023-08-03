@@ -1,21 +1,34 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-from SentimentAnalysis.ProcessWords import review_to_wordlist, get_data_ready
-from sklearn.externals import joblib
-from json import load
+from json import loads
 
-model = joblib.load("SentimentAnalysis/models/model-0.69-0.003-50.joblib")
+import joblib
+import requests as rq
 
-with open("SentimentAnalysis/dictionary/word2index.json","r") as json_file:
-	word2index = load(json_file)
+from SentimentAnalysis.processwords import review_to_wordlist, get_data_ready
 
-def predict_sentiment(text):
+class PredictSentiment:
+	def __init__(self) -> None:
+		self._load_model()
+		self._load_dictionary()
+		pass
 
-	processed_text = review_to_wordlist(text)
+	def _load_model(self):
+		self.model = joblib.load("SentimentAnalysis/models/model-0.69-0.003-50.joblib")
+		pass
 
-	input_text_array = get_data_ready([processed_text], word2index) 
+	def _load_dictionary(self):
+		url = "https://firebasestorage.googleapis.com/v0/b/sentibo-sentiment-analysis.appspot.com/o/dictionary%2Fword2index.json?alt=media&token=1f328386-4385-4a5a-840d-8e507cccf505"
+		res = rq.get(url)
+		self.word2index = loads(res.content)
 
-	prediction = model.predict(input_text_array)
+	def predict_sentiment(self, text):
 
-	return prediction[0]
+		processed_text = review_to_wordlist(text)
+
+		input_text_array = get_data_ready([processed_text], self.word2index) 
+
+		prediction = self.model.predict(input_text_array)
+
+		return prediction[0]
